@@ -1,15 +1,14 @@
 from matrix import Matrix, add_matrices
 
-rows = int(input("Enter the number of rows: "))
-cols = int(input("Enter the number of cols: "))
+matrix1 = Matrix()
+matrix1.read_from_stdin()
 
-values1 = list(map(int, input("Enter the values separated by space: ").split()))
-matrix1 = Matrix(rows, cols, values1)
-values2 = list(map(int, input("Enter the values separated by space: ").split()))
-matrix2 = Matrix(rows, cols, values2)
+matrix2 = Matrix()
+matrix2.read_from_stdin()
 
 
-result_matrix = add_matrices(matrix1, matrix2)
+result = matrix1.add(matrix2)
+
 print("Resultant Matrix:")
-for row in result_matrix.data:
+for row in result.data:
     print(row)

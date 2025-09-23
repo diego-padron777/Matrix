@@ -11,10 +11,17 @@ This is a simple matrix operator.
 ## TODO:
 
 - Learn git.
-- Refactor the code.
-    - Create a separate file for matrix.
-    - Format code (ctrl-shift-p FORMAT DOCUMENT)
+- Refactor the code. 
 - Add error if matrix sizes don't match.
+
+
+## Refactor:
+
+Make small code changes to make the code more readable and re-usable.
+
+- Create a separate file for matrix.
+- Format code (ctrl-shift-p FORMAT DOCUMENT)
+- Create read and add methods.
 
 
 ### Version Control System classic example:
