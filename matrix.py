@@ -1,20 +1,20 @@
 class Matrix:
-    def __init__(self, rows, cols):
+    def __init__(self, rows=0, cols=0, values=[]):
+        self.data = values
         self.rows = rows
         self.cols = cols
 
-        self.data = [[]]
-
-    def read(self):
-        rows = int(input("Enter the number of rows: "))
-        cols = int(input("Enter the number of cols: "))
+    def read_from_stdin(self):
+        self.data = []
+        self.rows = int(input("Enter the number of rows: "))
+        self.cols = int(input("Enter the number of cols: "))
 
         values = list(map(int, input("Enter the values separated by space: ").split()))
 
         index = 0
-        for i in range(rows):
+        for i in range(self.rows):
             row = []
-            for j in range(cols):
+            for j in range(self.cols):
                 row.append(values[index])
                 index += 1
             self.data.append(row)

@@ -1,4 +1,4 @@
-from matrix import Matrix, add_matrices
+from matrix import Matrix
 
 matrix1 = Matrix()
 matrix1.read_from_stdin()
