@@ -12,6 +12,8 @@ This is a simple matrix operator.
 
 - Learn git.
 - Refactor the code.
+    - Create a separate file for matrix.
+    - Format code (ctrl-shift-p FORMAT DOCUMENT)
 - Add error if matrix sizes don't match.
 
 
