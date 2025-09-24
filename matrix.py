@@ -28,3 +28,12 @@ class Matrix:
                 result_values.append(self.data[i][j] + m2.data[i][j])
 
         return Matrix(self.rows, self.cols, result_values)
+
+    def substraction(self, m2):
+        result_values = []
+        for i in range(self.rows):
+            for j in range(self.cols):
+                result_values.append(self.data[i][j] - m2.data[i][j])
+
+        return Matrix(self.rows, self.cols, result_values)
+        

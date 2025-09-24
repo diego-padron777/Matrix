@@ -7,7 +7,7 @@ matrix2 = Matrix()
 matrix2.read_from_stdin()
 
 
-result = matrix1.add(matrix2)
+result = matrix1.substraction(matrix2)
 
 print("Resultant Matrix:")
 for row in result.data:
