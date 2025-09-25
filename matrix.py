@@ -24,16 +24,19 @@ class Matrix:
     def add(self, m2):
         result_values = []
         for i in range(self.rows):
+            row = []
             for j in range(self.cols):
-                result_values.append(self.data[i][j] + m2.data[i][j])
+                row.append(self.data[i][j] + m2.data[i][j])
+            result_values.append(row)
 
         return Matrix(self.rows, self.cols, result_values)
 
     def substraction(self, m2):
         result_values = []
         for i in range(self.rows):
+            row = []
             for j in range(self.cols):
-                result_values.append(self.data[i][j] - m2.data[i][j])
+                row.append(self.data[i][j] - m2.data[i][j])
+            result_values.append(row)
 
         return Matrix(self.rows, self.cols, result_values)
-        
