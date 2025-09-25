@@ -13,6 +13,7 @@ This is a simple matrix operator.
 - Learn git.
 - Refactor the code. 
 - Add error if matrix sizes don't match.
+- Substraction.
 
 
 ## Refactor:
