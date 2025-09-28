@@ -38,5 +38,21 @@ class Matrix:
             for j in range(self.cols):
                 row.append(self.data[i][j] - m2.data[i][j])
             result_values.append(row)
-
+            
         return Matrix(self.rows, self.cols, result_values)
+
+    def multiply(self, m2):
+        if self.cols != m2.rows:
+            raise ValueError("Matrix dimensions do not match for multiplication")
+
+        result_values = []
+        for i in range(self.rows):
+            row = []
+            for j in range(m2.cols):
+                total = 0
+                for k in range(self.cols):
+                    total += self.data[i][k] * m2.data[k][j]
+                row.append(total)
+            result_values.append(row)
+            
+        return Matrix(self.rows, m2.cols, result_values)

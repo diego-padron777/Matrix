@@ -1,5 +1,6 @@
 from matrix import Matrix
 
+
 def test_matrix_substraction():
     m1 = Matrix(2,2,[[1,1],[1,1]])
     m2 = Matrix(2,2,[[2,2],[2,2]])
@@ -9,7 +10,7 @@ def test_matrix_substraction():
     assert r.rows == m1.rows
     assert r.cols == m1.cols
     assert r.data == [[-1,-1],[-1,-1]]
-
+    
 def test_matrix_add():
     m1 = Matrix(2,2,[[1,1],[1,1]])
     m2 = Matrix(2,2,[[2,2],[2,2]])
@@ -29,3 +30,14 @@ def test_matrix_add_1x1():
     assert r.rows == m1.rows
     assert r.cols == m1.cols
     assert r.data == [[3]]
+
+
+def test_matrix_multiply():
+    m1 = Matrix(2, 3, [[1, 2, 3], [4, 5, 6]])
+    m2 = Matrix(3, 2, [[7, 8], [9, 10], [11, 12]])
+    
+    r = m1.multiply(m2)
+    
+    assert r.rows == m1.rows
+    assert r.cols == m2.cols
+    assert r.data == [[58, 64], [139, 154]]
