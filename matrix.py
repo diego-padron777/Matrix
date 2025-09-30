@@ -61,6 +61,7 @@ class Matrix:
         return Matrix(self.rows, m2.cols, result_values)
     
 
+
     def determinant(self, *, use_fraction=False, eps=1e-12, copy_matrix=True):
     
         if self.rows == 0 and self.cols == 0:
@@ -113,3 +114,15 @@ class Matrix:
             prod = -prod
 
         return prod
+
+    def transpose(self):
+        result_values = []
+        
+        for j in range(self.cols):
+            row = []
+            for i in range(self.rows):
+                row.append(self.data[i][j])
+            result_values.append(row)
+            
+        return Matrix(self.cols, self.rows, result_values)
+
