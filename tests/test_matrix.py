@@ -58,3 +58,10 @@ def test_matrix_transpose():
     assert r.cols == m1.rows
     assert r.data == [[1, 4], [2, 5], [3, 6]]
 
+def test_matrix_inverse():
+    m1 = Matrix(2, 2, [[1,2],[3,4]])
+
+    r = m1.inverse()
+
+    assert r.data == [[-2.0,1.0],[1.5,-0.5]]
+

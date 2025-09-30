@@ -12,7 +12,7 @@ class Matrix:
         self.rows = int(input("Enter the number of rows: "))
         self.cols = int(input("Enter the number of cols: "))
 
-        values = list(map(int, input("Enter the values separated by space: ").split()))
+        values = list(map(float, input("Enter the values separated by space: ").split()))
 
         index = 0
         for i in range(self.rows):
@@ -125,4 +125,48 @@ class Matrix:
             result_values.append(row)
             
         return Matrix(self.cols, self.rows, result_values)
+    
+    def inverse(self):
+        det = self.determinant()
+        if det == 0:
+            raise ValueError("Matrix is not invertible (determinant is 0)")
+        
+        if self.rows != self.cols:
+            raise ValueError("Matrix must be square to calculate inverse")
+
+        # Create adjugate matrix
+        adj_values = []
+        for i in range(self.rows):
+            row = []
+            for j in range(self.cols):
+                # Create minor matrix by excluding row i and column j
+                minor_values = []
+                for r in range(self.rows):
+                    if r != i:
+                        minor_row = []
+                        for c in range(self.cols):
+                            if c != j:
+                                minor_row.append(self.data[r][c])
+                        minor_values.append(minor_row)
+                
+                # Calculate cofactor
+                minor = Matrix(self.rows-1, self.cols-1, minor_values)
+                cofactor = minor.determinant() * (-1 if (i + j) % 2 else 1)
+                row.append(cofactor)
+            adj_values.append(row)
+        
+        # Create adjugate matrix and transpose it
+        adj_matrix = Matrix(self.rows, self.cols, adj_values).transpose()
+        
+        # Multiply by 1/determinant
+        result_values = []
+        for i in range(self.rows):
+            row = []
+            for j in range(self.cols):
+                row.append(adj_matrix.data[i][j] / det)
+            result_values.append(row)
+        
+        return Matrix(self.rows, self.cols, result_values)
+
+    
 
