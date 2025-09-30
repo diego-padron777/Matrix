@@ -56,3 +56,14 @@ class Matrix:
             result_values.append(row)
             
         return Matrix(self.rows, m2.cols, result_values)
+    
+    def transpose(self):
+        result_values = []
+        
+        for j in range(self.cols):
+            row = []
+            for i in range(self.rows):
+                row.append(self.data[i][j])
+            result_values.append(row)
+            
+        return Matrix(self.cols, self.rows, result_values)

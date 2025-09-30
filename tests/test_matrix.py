@@ -41,3 +41,12 @@ def test_matrix_multiply():
     assert r.rows == m1.rows
     assert r.cols == m2.cols
     assert r.data == [[58, 64], [139, 154]]
+
+def test_matrix_transpose():
+    m1 = Matrix(2, 3, [[1, 2, 3], [4, 5, 6]])
+    
+    r = m1.transpose()
+    
+    assert r.rows == m1.cols
+    assert r.cols == m1.rows
+    assert r.data == [[1, 4], [2, 5], [3, 6]]
