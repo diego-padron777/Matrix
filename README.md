@@ -16,6 +16,9 @@ This is a simple matrix operator.
 - Substraction.
 - Add new features to check compatibility between branches
 
+DONE:
+- Multiplication by scalar
+
 ## Refactor:
 
 Make small code changes to make the code more readable and re-usable.

@@ -65,3 +65,30 @@ def test_matrix_inverse():
 
     assert r.data == [[-2.0,1.0],[1.5,-0.5]]
 
+def test_matrix_inverse_eye():
+    # Setup
+    m1 = Matrix(3, 3, [[1,0,0],[0,1,0],[0,0,1]])
+
+    # test
+    r = m1.inverse()
+
+    # Verify Assertions
+    assert r.data == [[1.0,0.0,0.0],[0.0,1.0,0.0],[0.0,0.0,1.0]]
+
+def test_matrix_inverse_eye_1x1():
+    # Setup
+    m1 = Matrix(1, 1, [[1]])
+
+    # test
+    r = m1.inverse()
+
+    # Verify Assertions
+    assert r.data == [[1.0]]
+
+def test_matrix_inverse_eye_10x10():
+    # Setup
+    m1 = Matrix(10, 10, [[1 if i == j else 0 for j in range(10)] for i in range(10)])
+    # test
+    r = m1.inverse()
+    # Verify Assertions
+    assert r.data == [[1.0 if i == j else 0.0 for j in range(10)] for i in range(10)]

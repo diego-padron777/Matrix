@@ -1,6 +1,8 @@
 from fractions import Fraction
 import copy
 
+from matrix_multipliaction_scalar import multiply
+
 class Matrix:
     def __init__(self, rows=0, cols=0, values=[]):
         self.data = values
@@ -60,7 +62,9 @@ class Matrix:
             
         return Matrix(self.rows, m2.cols, result_values)
     
-
+    def multiply_by_scalar(self, scalar):
+        data = multiply(self.data, scalar) 
+        return Matrix(self.rows, self.cols, data)
 
     def determinant(self, *, use_fraction=False, eps=1e-12, copy_matrix=True):
     
