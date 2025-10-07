@@ -14,6 +14,8 @@ This is a simple matrix operator.
 - Refactor the code. 
 - Add error if matrix sizes don't match.
 - Substraction.
+
+DONE:
 - Multiplication by scalar
 
 
