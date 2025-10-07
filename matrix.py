@@ -63,7 +63,8 @@ class Matrix:
         return Matrix(self.rows, m2.cols, result_values)
     
     def multiply_by_scalar(self, scalar):
-        return multiply(self.data, scalar) 
+        data = multiply(self.data, scalar) 
+        return Matrix(self.rows, self.cols, data)
 
     def determinant(self, *, use_fraction=False, eps=1e-12, copy_matrix=True):
     
