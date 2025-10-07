@@ -1,11 +1,15 @@
 from matrix import Matrix
 
-matrix1 = Matrix()
-matrix1.read_from_stdin()
+A = Matrix()
+A.read_from_stdin()
 
+B = Matrix()
+B.read_from_stdin()
 
+#x = A/B = A * B^-1
 
-result = matrix1.inverse()
+B_inv = B.inverse()
+result = A.multiply(B_inv)
 
 print("Resultant Matrix:")
 for row in result.data:

@@ -14,10 +14,10 @@ This is a simple matrix operator.
 - Refactor the code. 
 - Add error if matrix sizes don't match.
 - Substraction.
+- Add new features to check compatibility between branches
 
 DONE:
 - Multiplication by scalar
-
 
 ## Refactor:
 
